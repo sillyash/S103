@@ -8,7 +8,6 @@
 
 - [Sommaire](#sommaire)
 - [Installation de Arch GNU/Linux](#installation-de-arch-gnulinux)
-	- [Préparation du support d'installation](#préparation-du-support-dinstallation)
 	- [Installation du système](#installation-du-système)
 	- [Téléchargement et extraction du système de fichiers root](#téléchargement-et-extraction-du-système-de-fichiers-root)
 	- [Démontage des partitions](#démontage-des-partitions)
@@ -21,13 +20,6 @@
 	- [Raspberry Pi 3](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3)
 
 **Attention: Toutes les étapes suivantes (sauf précision du contraire) sont à effectuer sur ordinateur.**
-
-### Préparation du support d'installation
-
-- Téléchargement d'une image disque (ISO) sur [archlinux.org](http://archlinux.org/)
-- Téléchargement de [Rufus](http://rufus.ie/en/)
-- Trouver un support de stockage (USB/SD)
-- Ecrire l'ISO sur le support avec [Rufus](http://rufus.ie/en/)
 
 ### Installation du système
 
