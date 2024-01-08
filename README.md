@@ -23,10 +23,6 @@
 
 ### Installation du système
 
-- Booter Raspberry Pi sur le support d'installation (UEFI/BIOS) *"yay, Arch terminal!"*
-
-		loadkeys fr-latin1
-
 - Connexion à internet
 
 		ip link
