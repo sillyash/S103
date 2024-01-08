@@ -7,11 +7,22 @@
 ## Sommaire
 
 - [Sommaire](#sommaire)
+- [Matériel](#matériel)
 - [Installation de Arch GNU/Linux](#installation-de-arch-gnulinux)
 	- [Installation du système](#installation-du-système)
 	- [Téléchargement et extraction du système de fichiers root](#téléchargement-et-extraction-du-système-de-fichiers-root)
 	- [Démontage des partitions](#démontage-des-partitions)
  	- [Reboot et remplissage des clés](#reboot-et-remplissage-des-clés)
+
+## Matériel
+
+- 1 Raspberry Pi 400
+- 1 Carte SD
+- 1 Lecteur/adaptateur de carte SD
+- 1 Adaptateur Ethernet-to-USB
+- 1 Patch UTP (petit câble Ethernet)
+- 1 Câble HDMI-to-miniHDMI (pour connecter la carte à un écran)
+- 1 Câble USBa-to-USBc (pour alimenter la carte) 
 
 ## Installation de Arch GNU/Linux
 
@@ -101,6 +112,9 @@ Choisir le tarball à installer:
 - Connecter la câble Ethernet
 - Alimenter la carte
 - Login sur la carte (via Console/SSH)
+
+		loadkeys fr-latin1
+    
 	- Login en tant que utilisateur par défaut *alarm* avec le mot de passe *alarm*.
     - Le mot de passe *root* par défaut est *root*
 - Initialisation et remplissage des clés
@@ -108,6 +122,27 @@ Choisir le tarball à installer:
 		pacman-key --init
 		pacman-key --populate archlinuxarm
 
+### Quelques paquets à installer
+
+- Gnome & Wayland
+
+		sudo pacman -Syu gnome gnome-extra wayland
+
+	Enable gdm services for startup launch
+
+  		systemctl enable gdm.service
+
+- Git & GitAhead
+
+		sudo pacman -Syu git gitahead
+
+- Sublime Text & Nano
+
+  		sudo pacman -Syu nano sublime-text-4
+
+- Bat
+
+  		sudo pacman -Syu bat
 
 <br><br>
 
