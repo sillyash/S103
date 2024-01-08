@@ -12,6 +12,7 @@
 	- [Installation du système](#installation-du-système)
 	- [Téléchargement et extraction du système de fichiers root](#téléchargement-et-extraction-du-système-de-fichiers-root)
 	- [Démontage des partitions](#démontage-des-partitions)
+ 	- [Reboot et remplissage des clés](#reboot-et-remplissage-des-clés)
 
 ## Installation de Arch GNU/Linux
 
