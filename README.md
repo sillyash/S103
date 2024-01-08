@@ -25,7 +25,6 @@
 ### Préparation du support d'installation
 
 - Téléchargement d'une image disque (ISO) sur [archlinux.org](http://archlinux.org/)
-	- Choisir ARMv7 ou AArch64
 - Téléchargement de [Rufus](http://rufus.ie/en/)
 - Trouver un support de stockage (USB/SD)
 - Ecrire l'ISO sur le support avec [Rufus](http://rufus.ie/en/)
