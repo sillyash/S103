@@ -114,6 +114,10 @@ Choisir le tarball à installer:
 - Login sur la carte (via Console/SSH)
 
 		loadkeys fr-latin1
+
+- Activate internet services
+
+		systemctl systemd-networkd.service
     
 	- Login en tant que utilisateur par défaut *alarm* avec le mot de passe *alarm*.
     - Le mot de passe *root* par défaut est *root*
