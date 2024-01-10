@@ -112,6 +112,10 @@ Choisir le tarball à installer:
 - Connecter la câble Ethernet
 - Alimenter la carte
 - Login sur la carte (via Console/SSH)
+	- Login en tant que utilisateur par défaut *alarm* avec le mot de passe *alarm*.
+    	- Le mot de passe *root* par défaut est *root*
+
+- Change keyboard layout
 
 		loadkeys fr-latin1
 
@@ -119,8 +123,6 @@ Choisir le tarball à installer:
 
 		systemctl systemd-networkd.service
     
-	- Login en tant que utilisateur par défaut *alarm* avec le mot de passe *alarm*.
-    - Le mot de passe *root* par défaut est *root*
 - Initialisation et remplissage des clés
 
 		pacman-key --init
