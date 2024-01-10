@@ -1,4 +1,4 @@
-# [S103 · Installation of a](http://www.lri.fr/~zema/S103/S103.html)
+# [S103 · Machine installation project](http://www.lri.fr/~zema/S103/S103.html)
 
 ## Version [Arch GNU/Linux](http://archlinux.org/)
 
