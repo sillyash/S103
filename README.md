@@ -1,30 +1,19 @@
-# [S103 · Installation d'un poste pour le développement](http://www.lri.fr/~zema/S103/S103.html)
+# [S103 · Installation of a](http://www.lri.fr/~zema/S103/S103.html)
 
 ## Version [Arch GNU/Linux](http://archlinux.org/)
 
 ### Ash MERIENNE, Alain SANDOZ, Naomie FAZER
 
-## Sommaire
+## Table of contents
 
-- [Sommaire](#sommaire)
-- [Matériel](#matériel)
-- [Installation de Arch GNU/Linux](#installation-de-arch-gnulinux)
-	- [Installation du système](#installation-du-système)
-	- [Téléchargement et extraction du système de fichiers root](#téléchargement-et-extraction-du-système-de-fichiers-root)
-	- [Démontage des partitions](#démontage-des-partitions)
- 	- [Reboot et remplissage des clés](#reboot-et-remplissage-des-clés)
+- [Sommaire](#table-of-contents)
+- [Installation de Arch GNU/Linux](#arch-gnulinux-installation)
+	- [Disk partitioning and formatting](#disk-partitioning-and-formatting)
+	- [File system download and extraction](#file-system-download-and-extraction)
+	- [Unmounting](#unmounting)
+ 	- [Reboot and keys initializing](#reboot-and-keys-initializing)
 
-## Matériel
-
-- 1 Raspberry Pi 400
-- 1 Carte SD
-- 1 Lecteur/adaptateur de carte SD
-- 1 Adaptateur Ethernet-to-USB
-- 1 Patch UTP (petit câble Ethernet)
-- 1 Câble HDMI-to-miniHDMI (pour connecter la carte à un écran)
-- 1 Câble USBa-to-USBc (pour alimenter la carte) 
-
-## Installation de Arch GNU/Linux
+## Arch GNU/Linux installation
 
 - Sources
 	- [Raspberry Pi 4](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4)
@@ -32,7 +21,7 @@
 
 **Attention: Toutes les étapes suivantes (sauf précision du contraire) sont à effectuer sur ordinateur.**
 
-### Installation du système
+### Disk partitioning and formatting
 
 - Connexion à internet
 
@@ -71,7 +60,7 @@
 			mkdir root
 			mount /dev/sdX2 root
 
-### Téléchargement et extraction du système de fichiers root
+### File system download and extraction
 
 **Attention: à effectuer en tant que root, pas via sudo**
 
@@ -90,7 +79,7 @@ Choisir le tarball à installer:
 	bsdtar -xpf [archive téléchargée] -C root
 	sync
 
-### Démontage des partitions
+### Unmounting
 
 - Déplacer les fichiers boot sur la première partition
 
@@ -104,7 +93,7 @@ Choisir le tarball à installer:
 
 		sed -i 's/mmcblk0/mmcblk1/g' root/etc/fstab
 
-### Reboot et remplissage des clés
+### Reboot and keys initializing
 
 **Attention: Cette partie s'effectue sur Raspberry Pi**
 
