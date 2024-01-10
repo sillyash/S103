@@ -6,8 +6,8 @@
 
 ## Table of contents
 
-- [Sommaire](#table-of-contents)
-- [Installation de Arch GNU/Linux](#arch-gnulinux-installation)
+- [Table of contents](#table-of-contents)
+- [Arch GNU/Linux installation](#arch-gnulinux-installation)
 	- [Disk partitioning and formatting](#disk-partitioning-and-formatting)
 	- [File system download and extraction](#file-system-download-and-extraction)
 	- [Unmounting](#unmounting)
