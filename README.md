@@ -158,4 +158,4 @@ With me group, we chose to use INSERT-NAME as the DBMS for this project.
 
 <br><br>
 
-[Return to top](#table-of-content)
+[Return to top](#table-of-contents)
