@@ -4,6 +4,7 @@
 
 ### Ash MERIENNE, Alain SANDOZ, Naomie FAZER
 
+
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
@@ -13,6 +14,9 @@
 	- [Unmounting](#unmounting)
  	- [Reboot and keys initializing](#reboot-and-keys-initializing)
   	- [Some packages to install](#some-packages-to-install)
+- [Choosing and installing a DBMS](#choosing-and-installing-a-dbms)
+	- [Installing the DBMS](#installing-the-dbms)
+
 
 ## Arch GNU/Linux installation
 
@@ -120,7 +124,7 @@ Choose the tarball to install:
 
 ### Some packages to install
 
-- Gnome & Wayland
+- Gnome & Wayland (GUI)
 
 		sudo pacman -Syu gnome gnome-extra wayland
 
@@ -128,17 +132,29 @@ Choose the tarball to install:
 
   		systemctl enable gdm.service
 
-- Git & GitAhead
+- Git & GitAhead (Repo management)
 
 		sudo pacman -Syu git gitahead
 
-- Sublime Text & Nano
+- Sublime Text & Nano (Text editors)
 
   		sudo pacman -Syu nano sublime-text-4
 
-- Bat
+- Bat (A better version of cat)
 
   		sudo pacman -Syu bat
+
+
+## Choosing and installing a DBMS
+
+With me group, we chose to use INSERT-NAME as the DBMS for this project.
+
+### Installing the DBMS
+
+	pacman -S INSERT-NAME
+
+ 
+
 
 <br><br>
 
