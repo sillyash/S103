@@ -19,7 +19,7 @@
 	- [Raspberry Pi 4](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4)
 	- [Raspberry Pi 3](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3)
 
-**Attention: Toutes les étapes suivantes (sauf précision du contraire) sont à effectuer sur ordinateur.**
+**Disclaimer: the following text is the same from the sources above with slight twists, and is not of my creation.**
 
 ### Disk partitioning and formatting
 
