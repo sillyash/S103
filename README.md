@@ -12,6 +12,7 @@
 	- [File system download and extraction](#file-system-download-and-extraction)
 	- [Unmounting](#unmounting)
  	- [Reboot and keys initializing](#reboot-and-keys-initializing)
+  	- [Some packages to install](#some-packages-to-install)
 
 ## Arch GNU/Linux installation
 
@@ -23,53 +24,53 @@
 
 ### Disk partitioning and formatting
 
-- Connexion à internet
+- Connect to the internet
 
 		ip link
 		ping archlinux.org
 
-- Partitionner le disque (SD)
+- Partition the disk (SD)
 
 		fdisk -l
 		disk /dev/sdX
 
-	- Effacer les partitions préexistantes, créer la partition boot, la mettre en W95 FAT32
+	- Erase existing partitions, create the boot partition, set it to W95 FAT32
 
 			o n p 1 ENTER 200M t c
 
-	- Créer la partition root sur le reste du disque
+	- Create root partition on the remaining space on the disk
 
 			n p 2 ENTER ENTER
 
-- Formatage des partitions et mn,tage des systèmes de fichiers
-	- Formater la partition *boot* en *W95 FAT32*
+- Partition formatting and mounting
+	- Format *boot* partition in *W95 FAT32*
 
 			mkfs.vfat /dev/sdX1
 
-	- Créer et monter le système boot
+	- Create and mount FAT filesystem
 
 			mkdir boot
 			mount /dev/sdX1 boot
 
-	- Formater la partition *root* en *ext4*
+	- Format *root* partition in *ext4*
 
 			mkfs.ext4 /dev/sdX2
 
-	- Créer et monter le système root
+	- Create and mount the ext4 filesystem
 
 			mkdir root
 			mount /dev/sdX2 root
 
 ### File system download and extraction
 
-**Attention: à effectuer en tant que root, pas via sudo**
+**Warning: run these commands as root, not via sudo**
 
-Choisir le tarball à installer:
-- Pour ARMv7 (recommandé)
+Choose the tarball to install:
+- For ARMv7 (recommanded)
 
 	http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-armv7-latest.tar.gz
 
-- Pour AArch64
+- For AArch64
 
 	http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz
 
@@ -81,28 +82,28 @@ Choisir le tarball à installer:
 
 ### Unmounting
 
-- Déplacer les fichiers boot sur la première partition
+- Move boot files on first partition
 
 		mv root/boot/* boot
 
-- Démonter les partitions
+- Unmount partitions
 
 		umount boot root
 
-	Pour Raspberry Pi 4 seulement, mettre à jour fstab pour le bloc SD:
+	For Raspberry Pi 4 only, update fstab for SD block:
 
 		sed -i 's/mmcblk0/mmcblk1/g' root/etc/fstab
 
 ### Reboot and keys initializing
 
-**Attention: Cette partie s'effectue sur Raspberry Pi**
+**Note: do this on the Raspberry Pi**
 
-- Insérer la carte SD dans la carte
-- Connecter la câble Ethernet
-- Alimenter la carte
-- Login sur la carte (via Console/SSH)
-	- Login en tant que utilisateur par défaut *alarm* avec le mot de passe *alarm*.
-    	- Le mot de passe *root* par défaut est *root*
+- Insert SD card
+- Connect ethernet cable
+- Power the card
+- Login on the card (via Console/SSH)
+	- Login as default user *alarm* with password *alarm*.
+    	- Default *root* password is *root*
 
 - Change keyboard layout
 
@@ -112,12 +113,12 @@ Choisir le tarball à installer:
 
 		systemctl systemd-networkd.service
     
-- Initialisation et remplissage des clés
+- Initialize and populate Arch with keys
 
 		pacman-key --init
 		pacman-key --populate archlinuxarm
 
-### Quelques paquets à installer
+### Some packages to install
 
 - Gnome & Wayland
 
@@ -141,4 +142,4 @@ Choisir le tarball à installer:
 
 <br><br>
 
-[Retour au sommaire](#sommaire)
+[Return to top](#table-of-content)
