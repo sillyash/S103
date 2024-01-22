@@ -362,7 +362,7 @@ Using the previous commands, we can do:
 
 To check the connection:
 
-	sudo mysql -uprof -p voyage
+	sudo mysql -uprof -p CAMPING
 
 
 <br><br>
