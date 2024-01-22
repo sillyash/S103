@@ -143,7 +143,7 @@ Choose the tarball to install:
 
 **Xserver did not work on the installation, and we didn't find any documebtation concerning our error. "startx" returned an error exit status. So... we gave up on Arch and flashed the SD card with RaspberryPi OS (64 bits)....**
 
-## OS Installation (Raspberry Pi OS)
+## Raspberry Pi OS installation
 
 ### Flashing the SD card
 
