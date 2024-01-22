@@ -1,19 +1,30 @@
 # [S103 · Machine installation project](http://www.lri.fr/~zema/S103/S103.html)
 
-## Version [Arch GNU/Linux](http://archlinux.org/)
-
-### Ash MERIENNE, Alain SANDOZ, Naomie FAZER
+### By Naomie FAZER, Ash MERIENNE and Alain SANDOZ
 
 
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
+
 - [Arch GNU/Linux installation](#arch-gnulinux-installation)
 	- [Disk partitioning and formatting](#disk-partitioning-and-formatting)
 	- [File system download and extraction](#file-system-download-and-extraction)
 	- [Unmounting](#unmounting)
  	- [Reboot and keys initializing](#reboot-and-keys-initializing)
   	- [Some packages to install](#some-packages-to-install)
+
+- [Problems](#problems)
+
+- [Raspberry Pi OS installation](#raspberry-pi-os-installation)
+	- [Flashing the SD card](#flashing-the-sd-card)
+	- [First boot and setting up](#first-boot-and-setting-up)
+	- [Language and keyboard settings](#language-and-keyboard-settings)
+	- [Network setup](#network-setup)
+
+- [MariaDB installation](#mariadb-installation)
+	- [Update package list](#update-package-list)
+	- [Install MariaDB server](#install-mariadb-server)
 
 
 ## Arch GNU/Linux installation
@@ -153,23 +164,54 @@ Choose the tarball to install:
  
  choose ```enable SSH```, set ```lang fr```, user ```pi``` and set password to ```student```.
 
+
 ### First boot and setting up
 
 Plug the SD card in the Raspberry Pi, power the card and boot up.
 
-## Language and keyboard settings
 
-Go to settings -> 
+### Language and keyboard settings
 
-- set locale to ```fr``` and keyboard to ```fr``` , language ```fr``` country ```fr``` , character set ```UTF-8```
-- set time zone to europe Paris
-- change keyboard layout to french
+- Language (Settings -> Language)
+	- set locale to ```fr```
+	- set keyboard to ```fr```
+	- set language to ```fr```
+	- set country to ```fr```
+	- set character set to ```UTF-8```
+- Timezone and keyboard
+	- set time zone to europe Paris
 
-https://raspberrytips.com/install-mariadb-raspberry-pi/
+			timedatectl set-timezone "Europe/Paris"
 
-sudo apt upgrade
-sudo apt-get update --fix-missing
-sudo apt install mariadb-server
+	- change keyboard layout to ```french - France``` (Settings -> Language)
+
+
+### Network setup
+
+Manually set the time and date of the Raspberry Pi.
+
+	sudo date -s "YYYY-MM-DD HH:MM:SS"
+
+Normally, if you haven't tried connecting to WLAN or modified the properties of ```eth0```, internet should work fine.
+
+
+## MariaDB installation
+
+Resources used: https://raspberrytips.com/install-mariadb-raspberry-pi/
+
+
+### Update package list
+
+	sudo apt-get update [--fix-missing] (if problems with next step)
+	sudo apt upgrade
+
+
+### Install MariaDB server
+
+	sudo apt install mariadb-server
+
+
+
 <br><br>
 
 [Return to top](#table-of-contents)
