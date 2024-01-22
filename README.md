@@ -6,25 +6,29 @@
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
-
 - [Arch GNU/Linux installation](#arch-gnulinux-installation)
 	- [Disk partitioning and formatting](#disk-partitioning-and-formatting)
 	- [File system download and extraction](#file-system-download-and-extraction)
 	- [Unmounting](#unmounting)
  	- [Reboot and keys initializing](#reboot-and-keys-initializing)
   	- [Some packages to install](#some-packages-to-install)
-
 - [Problems](#problems)
-
 - [Raspberry Pi OS installation](#raspberry-pi-os-installation)
 	- [Flashing the SD card](#flashing-the-sd-card)
 	- [First boot and setting up](#first-boot-and-setting-up)
 	- [Language and keyboard settings](#language-and-keyboard-settings)
 	- [Network setup](#network-setup)
-
 - [MariaDB installation](#mariadb-installation)
 	- [Update package list](#update-package-list)
 	- [Install MariaDB server](#install-mariadb-server)
+- [MariaDB setup](#mariadb-setup)
+	- [Accessing the database](#accessing-the-database)
+	- [Root user creation](#root-user-creation)
+	- [Connect to the MariaDB server](#connect-to-the-mariadb-server)
+	- [A few basics](#a-few-basics)
+- [Create the database](#create-the-database)
+	- [Create tables](#create-tables)
+	- [Insert data into the tables](#insert-data-into-the-tables)
 
 
 ## Arch GNU/Linux installation
@@ -210,6 +214,75 @@ Resources used: https://raspberrytips.com/install-mariadb-raspberry-pi/
 ### Install MariaDB server
 
 	sudo apt install mariadb-server
+
+This command will also install ```MariaDB client``` and ```MySql``` (they're dependencies of this package).
+
+
+## MariaDB setup
+
+### Accessing the database
+
+To access the MariaDB commmand line and database, we use (the first time at least):
+
+	sudo mysql
+
+
+### Root user creation
+
+To create our first user (root), we use:
+
+	sudo mysql_secure_installation
+
+Next, press ```ENTER``` to  enter the password for ```root``` (currently, there is none, that's why we press ```ENTER```).
+
+Press ```Y``` to switch to unix_socket authentication, the ```Y``` again to set a new password for ```root```. \
+Set the password to ```"root"```.
+
+Press ```Y``` four times until the setup is complete. \
+Now, MariaDB is ready to use with root login.
+
+
+### Connect to the MariaDB server
+
+Use this command to connect to the server. \
+```-u``` specifies the user, so we put ```-uroot``` to connect as user ```root```. \
+```-p``` specifies the password, so we put ```-proot``` for the password.
+
+	mysql -uroot -proot
+
+The same command, but with more verbose:
+
+	mysql --user=root --password=root
+
+
+### A few basics
+
+In MariaDB, you cann see the list of commands using ```\h``` for help.\
+You can also use any MySQL command, such as ```SHOW DATABASES;``` or ```SHOW TABLES;```...
+
+
+## Create the database
+
+### 
+
+### Create tables
+
+	CREATE TABLE X (
+		xId INT NOT NULL,
+		X   X,
+		X	X,
+		PRIMARY KEY(xId),
+		FOREIGN KEY(X)
+	);
+
+
+### Insert data into the tables
+
+	INSERT INTO ... VALUES(X, X, X, X);
+	INSERT INTO ... VALUES(X, X, X, X);
+	...
+
+## Setup users
 
 
 
