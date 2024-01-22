@@ -169,7 +169,7 @@ Choose the tarball to install:
  
  **In the options:**
  
- choose ```enable SSH```, set ```lang fr```, user ```pi``` and set password to ```student```.
+ choose ```enable SSH```, set ```locale fr```, user ```student``` and set password to ```pwdstudent```.
 
 
 ### First boot and setting up
