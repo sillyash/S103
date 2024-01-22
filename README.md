@@ -277,7 +277,7 @@ You can of course use any SQL command such as:
 
 To create the database, we use the following MySQL command:
 
-	CREATE DETABASE CAMPING;
+	CREATE DATABASE CAMPING;
 
 To use this database, we simply do:
 
