@@ -275,19 +275,19 @@ You can of course use any SQL command such as:
 
 To create the database, we use the following MySQL command:
 
-	CREATE DETABASE voyage;
+	CREATE DETABASE CAMPING;
 
 To use this database, we simply do:
 
-	USE voyage;
+	USE CAMPING;
 
 And MariaDB should show that you're in the database like so:
 
-	MariaDB[voyage]>
+	MariaDB[CAMPING]>
 
 Next time you log in MariaDB, to gain time, you should use:
 
-	mysql -uroot -proot -p voyage
+	mysql -uroot -proot -p CAMPING
 
 To directly login into the the right database.
 
@@ -328,7 +328,7 @@ To create a new user, after logging in to MariaDB: \
 
 To allow the user to do anything on the database:
 
-	GRANT ALL PRIVILEGES ON voyage.* TO 'username'@'localhost';
+	GRANT ALL PRIVILEGES ON CAMPING.* TO 'username'@'localhost';
 
 To check the connection:
 
