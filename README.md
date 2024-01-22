@@ -182,6 +182,7 @@ Plug the SD card in the Raspberry Pi, power the card and boot up.
 	- set time zone to europe Paris
 
 			timedatectl set-timezone "Europe/Paris"
+		This should change the timezone to ```UTC+1```
 
 	- change keyboard layout to ```french - France``` (Settings -> Language)
 
