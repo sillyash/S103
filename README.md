@@ -30,6 +30,8 @@
 	- [Create the database](#create-the-database)
 	- [Create tables](#create-tables)
 	- [Insert data into the tables](#insert-data-into-the-tables)
+- [Setup users](#setup-users)
+
 
 
 ## Arch GNU/Linux installation
