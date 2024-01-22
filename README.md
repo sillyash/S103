@@ -14,8 +14,6 @@
 	- [Unmounting](#unmounting)
  	- [Reboot and keys initializing](#reboot-and-keys-initializing)
   	- [Some packages to install](#some-packages-to-install)
-- [Choosing and installing a DBMS](#choosing-and-installing-a-dbms)
-	- [Installing the DBMS](#installing-the-dbms)
 
 
 ## Arch GNU/Linux installation
@@ -122,39 +120,37 @@ Choose the tarball to install:
 		pacman-key --init
 		pacman-key --populate archlinuxarm
 
+- Update and install packages
+  
+		sudo pacman -Syu
+
+
 ### Some packages to install
 
-- Gnome & Wayland (GUI)
+- LXDE & Xserver (GUI)
 
-		sudo pacman -Syu gnome gnome-extra wayland
+		sudo pacman -S xorg xinit lxde
 
-	Enable gdm services for startup launch
+- MariaDB
 
-  		systemctl enable gdm.service
-
-- Git & GitAhead (Repo management)
-
-		sudo pacman -Syu git gitahead
-
-- Sublime Text & Nano (Text editors)
-
-  		sudo pacman -Syu nano sublime-text-4
+  		sudo pacman -S mariadb
 
 - Bat (A better version of cat)
 
   		sudo pacman -Syu bat
-
-
-## Choosing and installing a DBMS
-
-With me group, we chose to use INSERT-NAME as the DBMS for this project.
-
-### Installing the DBMS
-
-	pacman -S INSERT-NAME
-
  
+## Problems
 
+**Xserver did not work on the installation, and we didn't find any documebtation concerning our error. "startx" returned an error exit status. So... we gave up on Arch and flashed the SD card with RaspberryPi OS (64 bits)....**
+
+## OS Installation (Raspberry Pi OS)
+
+### Flashing the SD card
+
+	sudo rpi-imager
+
+ Choose Raspberry Pi OS 64-bits
+ In options: choose enable SSH, set lang and kbd to fr, user "pi" and password "student".
 
 <br><br>
 
