@@ -153,6 +153,11 @@ Choose the tarball to install:
  
  In options: choose ```enable SSH```, set ```lang fr```, user ```pi``` and password ```student```.
 
+ set locale to fr and keyboard to fr , language fr country fr , character set UTF-8
+ set time zone to europe Paris
+ change keyboard layout to french
+ set WLAN country to france
+
 <br><br>
 
 [Return to top](#table-of-contents)
