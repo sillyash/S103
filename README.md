@@ -332,9 +332,24 @@ To allow the user to do anything on the database:
 
 	GRANT ALL PRIVILEGES ON CAMPING.* TO 'username'@'localhost';
 
+In the test script on ```lri.fr```, we can see the following lines:
+
+	db_config = {
+    'user': 'prof',
+    'password': 'pwdprof',
+    'host': '10.42.0.2',
+    'database': 'CAMPING',
+	}
+
+Which means we need to create a user with the specified name and password. \
+Using the previous commands, we can do:
+
+	CREATE USER 'prof'@'localhost' IDENTIFIED BY 'pwdprof';
+	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'localhost';
+
 To check the connection:
 
-	sudo mysql -uusername -p voyage
+	sudo mysql -uprof -p voyage
 
 
 <br><br>
