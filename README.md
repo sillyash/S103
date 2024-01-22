@@ -120,28 +120,26 @@ Choose the tarball to install:
 		pacman-key --init
 		pacman-key --populate archlinuxarm
 
-- Update and install packages
+- Update and install packages for the system
   
-		sudo pacman -Syu
+		pacman -Syu
 
 
 ### Some packages to install
 
 - LXDE & Xserver (GUI)
 
-		sudo pacman -S xorg xinit lxde
+		pacman -S xorg xinit lxde
 
-- MariaDB
+- MariaDB server
 
-  		sudo pacman -S mariadb
-
-- Bat (A better version of cat)
-
-  		sudo pacman -Syu bat
+  		pacman -S mariadb-server
  
 ## Problems
 
-**Xserver did not work on the installation, and we didn't find any documebtation concerning our error. "startx" returned an error exit status. So... we gave up on Arch and flashed the SD card with RaspberryPi OS (64 bits)....**
+**Xserver did not work on the installation, and we didn't find any documebtation concerning our error. "startx" returned an error exit status.**
+
+**We wanted to have a GUI for our system, so we gave up on Arch ARM and restarted from scratch with Raspberry OS...**
 
 ## Raspberry Pi OS installation
 
@@ -151,12 +149,21 @@ Choose the tarball to install:
 
  Choose Raspberry Pi OS 64-bits
  
- In options: choose ```enable SSH```, set ```lang fr```, user ```pi``` and password ```student```.
+ **In the options:**
+ 
+ choose ```enable SSH```, set ```lang fr```, user ```pi``` and set password to ```student```.
 
- set locale to fr and keyboard to fr , language fr country fr , character set UTF-8
- set time zone to europe Paris
- change keyboard layout to french
- set WLAN country to france
+### First boot and setting up
+
+Plug the SD card in the Raspberry Pi, power the card and boot up.
+
+## Language and keyboard settings
+
+Go to settings -> 
+
+- set locale to ```fr``` and keyboard to ```fr``` , language ```fr``` country ```fr``` , character set ```UTF-8```
+- set time zone to europe Paris
+- change keyboard layout to french
 
 https://raspberrytips.com/install-mariadb-raspberry-pi/
 
