@@ -309,6 +309,13 @@ To create the tables, we simply use MySQL, like so:
 We made a script in advance so we could just create everything in a single command. \
 [See script](./tables.sql)
 
+To execute the script, we used:
+
+	source ~/tables.sql
+
+In the MariaDB terminal.
+
+
 ### Insert data into the tables
 
 To fill the tables with data, we simply use MySQL, like so:
@@ -319,6 +326,12 @@ To fill the tables with data, we simply use MySQL, like so:
 
 We also used a script to gain some time for this. \
 [See script](./data.sql)
+
+To execute the script, we used:
+
+	source ~/data.sql
+
+In the MariaDB terminal.
 
 
 ## Setup users
