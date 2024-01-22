@@ -158,6 +158,11 @@ Choose the tarball to install:
  change keyboard layout to french
  set WLAN country to france
 
+https://raspberrytips.com/install-mariadb-raspberry-pi/
+
+sudo apt upgrade
+sudo apt-get update --fix-missing
+sudo apt install mariadb-server
 <br><br>
 
 [Return to top](#table-of-contents)
