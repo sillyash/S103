@@ -26,7 +26,8 @@
 	- [Root user creation](#root-user-creation)
 	- [Connect to the MariaDB server](#connect-to-the-mariadb-server)
 	- [A few basics](#a-few-basics)
-- [Create the database](#create-the-database)
+- [Create the database and data](#create-the-database-and-data)
+	- [Create the database](#create-the-database)
 	- [Create tables](#create-tables)
 	- [Insert data into the tables](#insert-data-into-the-tables)
 
@@ -260,12 +261,40 @@ The same command, but with more verbose:
 In MariaDB, you cann see the list of commands using ```\h``` for help.\
 You can also use any MySQL command, such as ```SHOW DATABASES;``` or ```SHOW TABLES;```...
 
+You can of course use any SQL command such as:
 
-## Create the database
+	SELECT * FROM ...
+	INSERT INTO ...
+	CREATE TABLE ...
+	DROP TABLE ...
 
-### 
+
+## Create the database and data
+
+### Create the database
+
+To create the database, we use the following MySQL command:
+
+	CREATE DETABASE voyage;
+
+To use this database, we simply do:
+
+	USE voyage;
+
+And MariaDB should show that you're in the database like so:
+
+	MariaDB[voyage]>
+
+Next time you log in MariaDB, to gain time, you should use:
+
+	mysql -uroot -proot -p voyage
+
+To directly login into the the right database.
+
 
 ### Create tables
+
+To create the tables, we simply use MySQL, like so:
 
 	CREATE TABLE X (
 		xId INT NOT NULL,
@@ -275,15 +304,35 @@ You can also use any MySQL command, such as ```SHOW DATABASES;``` or ```SHOW TAB
 		FOREIGN KEY(X)
 	);
 
+We made a script in advance so we could just create everything in a single command. \
+[See script](./tables.sql)
 
 ### Insert data into the tables
+
+To fill the tables with data, we simply use MySQL, like so:
 
 	INSERT INTO ... VALUES(X, X, X, X);
 	INSERT INTO ... VALUES(X, X, X, X);
 	...
 
+We also used a script to gain some time for this. \
+[See script](./data.sql)
+
+
 ## Setup users
 
+To create a new user, after logging in to MariaDB: \
+*(change ```'username'```, ```'localhost'``` and ```'password'``` to the desired username, passwors and host.)*
+
+	CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
+To allow the user to do anything on the database:
+
+	GRANT ALL PRIVILEGES ON voyage.* TO 'username'@'localhost';
+
+To check the connection:
+
+	sudo mysql -uusername -p voyage
 
 
 <br><br>
