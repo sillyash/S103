@@ -150,7 +150,8 @@ Choose the tarball to install:
 	sudo rpi-imager
 
  Choose Raspberry Pi OS 64-bits
- In options: choose enable SSH, set lang and kbd to fr, user "pi" and password "student".
+ 
+ In options: choose ```enable SSH```, set ```lang fr```, user ```pi``` and password ```student```.
 
 <br><br>
 
