@@ -246,8 +246,13 @@ The ```%``` allow the remote user to connect from any IP using this login.
 
 To check the connection:
 
-	sudo mysql -uprof -p CAMPING
+	   sudo mysql -uprof -p CAMPING
+    SELECT user(), current_user();
 
+
+It should return something like:
+
+    prof@localhost | prof@%
 
 Finally, create a text file in your personal directory containing the name of your group's students.
 
