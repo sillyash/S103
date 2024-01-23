@@ -239,8 +239,10 @@ In the test script on ```lri.fr```, we can see the following lines:
 Which means we need to create a user with the specified name and password. \
 Using the previous commands, we can do:
 
-	CREATE USER 'prof'@'10.42.0.2' IDENTIFIED BY 'pwdprof';
-	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'10.42.0.2';
+	CREATE USER 'prof'@'%' IDENTIFIED BY 'pwdprof';
+	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'%';
+
+The ```%``` allow the remote user to connect from any IP using this login.
 
 To check the connection:
 
