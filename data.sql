@@ -1,5 +1,5 @@
 INSERT INTO CAMPING VALUES (1, 'Le Paradis', '123 Rue de la Forêt', '01 23 45 67 89', '2023-05-01', '2023-10-31');
-INSERT INTO ACTIVITE VALUES (2, 'Belle Nature', '456 Avenue des Montagnes', '98 76 54 32 10', '2023-06-15', '2023-09-30');
+INSERT INTO CAMPING VALUES (2, 'Belle Nature', '456 Avenue des Montagnes', '98 76 54 32 10', '2023-06-15', '2023-09-30');
 
 INSERT INTO ACTIVITE VALUES (101, 'Randonnée pédestre', 'Plein air');
 INSERT INTO ACTIVITE VALUES (102, 'Escalade', 'Aventure');
