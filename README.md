@@ -249,7 +249,7 @@ Using the previous commands, we can do:
 	CREATE USER 'prof'@'10.42.0.1' IDENTIFIED BY 'pwdprof';
 	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'10.42.0.1';
 
-The ```%``` allow the remote user to connect from any IP using this login.
+Reboot the Raspberry Pi.
 
 To check the connection:
 
