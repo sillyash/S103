@@ -249,8 +249,8 @@ To check the connection:
 
 Finally, create a text file in your personal directory containing the name of your group's students.
 
-  touch students.txt
-  nano students.txt
+    touch students.txt
+    nano students.txt
 
 
 <br><br>
