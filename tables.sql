@@ -1,12 +1,13 @@
 CREATE TABLE CAMPING (
-	 NumCamping INTEGER NOT NULL,
-	 NomCamping VARCHAR(50),
-      QualitéFrance BOOL NIT NULL,
- 	AddrCamping VARCHAR(50),
+	NumCamping INTEGER NOT NULL,
+	NomCamping VARCHAR(50),
+	QualitéFrance BOOL NOT NULL,
+ 	NbEtoiles INT NOT NULL,
+	AddrCamping VARCHAR(50),
  	TelCamping VARCHAR(15),
-	 DateOuv DATE,
-	 DateFerm DATE,
-	 PRIMARY KEY(NumCamping)
+	DateOuv DATE,
+	DateFerm DATE,
+	PRIMARY KEY(NumCamping)
 );
 
 CREATE TABLE ACTIVITE (
