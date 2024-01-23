@@ -71,7 +71,7 @@ Plug the SD card in the Raspberry Pi, power the card and boot up.
 			timedatectl set-timezone "Europe/Paris"
 		This should change the timezone to ```UTC+1```
 
-	- change keyboard layout to ```french - France``` (Settings -> Language)
+	- change keyboard layout to ```french - France```
 
 
 ### Network setup
@@ -189,7 +189,7 @@ To create the tables, we simply use MySQL, like so:
 	);
 
 We made a script in advance so we could just create everything in a single command. \
-[See script](https://github.com/sillyash/S103/blob/1c3209d38636e17decee25541b95f67d224a5574/tables.sql) (we had to download them in the personal repository)
+[See script](https://github.com/sillyash/S103/blob/1c3209d38636e17decee25541b95f67d224a5574/tables.sql) (we had to download the scripts in the personal repository)
 
 To execute the script, we used:
 
