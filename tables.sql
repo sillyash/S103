@@ -1,7 +1,7 @@
 CREATE TABLE CAMPING (
 	NumCamping INTEGER NOT NULL,
 	NomCamping VARCHAR(50),
-	QualitéFrance BOOL NOT NULL,
+	QualitéFrance VARCHAR(50) NOT NULL,
  	NbEtoiles INT NOT NULL,
 	AddrCamping VARCHAR(50),
  	TelCamping VARCHAR(15),
