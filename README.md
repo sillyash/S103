@@ -121,7 +121,9 @@ Next, press ```ENTER``` to  enter the password for ```root``` (currently, there 
 Press ```Y``` to switch to unix_socket authentication, then ```Y``` again to set a new password for ```root```. \
 Set the password to ```"root"```.
 
-Press ```Y``` four times until the setup is complete. \
+Press ```N``` to not disallow remote root connection to the database.
+
+Press ```Y``` three times until the setup is complete. \
 Now, MariaDB is ready to use with root login.
 
 
