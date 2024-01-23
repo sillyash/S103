@@ -1,11 +1,14 @@
 # [S103 · Machine installation project](http://www.lri.fr/~zema/S103/S103.html)
 
-### By Naomie FAZER, Ash MERIENNE and Alain SANDOZ
+## By Naomie FAZER, Ash MERIENNE and Alain SANDOZ
+
+### Paris-Saclay University | 23/01/2024
 
 
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
 - [Arch GNU/Linux installation](#arch-gnulinux-installation)
 - [Problems](#problems)
 - [Raspberry Pi OS installation](#raspberry-pi-os-installation)
@@ -26,7 +29,14 @@
 	- [Create tables](#create-tables)
 	- [Insert data into the tables](#insert-data-into-the-tables)
 - [Setup users](#setup-users)
+- [Difficulties encountered](#difficulties-encountered)
 
+
+## Introduction
+
+This project was made as a part of the curriculum of the Orsay IUT. \
+Mr. ZEMA organized this project: it is an inroduction to OS installations, database management. \
+It is the first DevOp we've ever had as a group, and we quite enjoyed it!
 
 
 ## Arch GNU/Linux installation
@@ -253,7 +263,7 @@ Reboot the Raspberry Pi.
 
 To check the connection:
 
-	   sudo mysql -uprof -p CAMPING
+    sudo mysql -uprof -p CAMPING
     SELECT user(), current_user();
 
 
@@ -265,6 +275,31 @@ Finally, create a text file in your personal directory containing the name of yo
 
     touch students.txt
     nano students.txt
+
+## Difficulties encountered
+
+Because of the snow, we missed 90 minutes durng the first class for the project.
+Also, we wasted 3 hours installing Arch only to realize we wouldn't have a GUI and a guarantee that SSH would work.
+
+We're only going to talk about the difficulties encountered after switching to Raspberry Pi OS, because talking about those on ArchARM as well would not be relevant.
+
+First of all, ther's been an overall confusion about the ```hostname``` for the ```prof``` user.
+There's been a mix-up between '10.42.0.2', '%', and finally, the one that worked out: '10.42.0.1'.
+
+Also, we had a hard time finding the problem about the ```bind_address``` problem: we found some documentation online and got helped by another group concerning this issue.
+
+## Task dispatching
+
+- Alain SANDOZ
+	- SQL scripts
+ 	- Finding help online (chatbots, forums...)
+- Naomie FAZER
+ 	- Most of the commands that we ran
+  	- The first and end part of the report
+  	- - Documentation gathering
+- Ash MERIENNE
+  	- Some commands
+   	- The rest of the report (including [ARCH-README](./ARCH-README.md)
 
 
 <br><br>
