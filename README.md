@@ -236,11 +236,18 @@ In the test script on ```lri.fr```, we can see the following lines:
     'database': 'CAMPING',
 	}
 
+First we need to modify the ```bind_address``` attribute for our server, to allow any IP to connect to it.
+
+    cd /etc/MySQL/mariadb.conf.d
+    sudo nano 50-server.cnf
+
+And find the line beginning by ```bind_address``` and change the address to ```0.0.0.0```.
+
 Which means we need to create a user with the specified name and password. \
 Using the previous commands, we can do:
 
-	CREATE USER 'prof'@'%' IDENTIFIED BY 'pwdprof';
-	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'%';
+	CREATE USER 'prof'@'10.42.0.1' IDENTIFIED BY 'pwdprof';
+	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'10.42.0.1';
 
 The ```%``` allow the remote user to connect from any IP using this login.
 
@@ -252,7 +259,7 @@ To check the connection:
 
 It should return something like:
 
-    prof@localhost | prof@%
+    prof@localhost | prof@10.42.0.1
 
 Finally, create a text file in your personal directory containing the name of your group's students.
 
