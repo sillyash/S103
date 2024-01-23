@@ -118,7 +118,7 @@ To create our first user (root), we use:
 
 Next, press ```ENTER``` to  enter the password for ```root``` (currently, there is none, that's why we press ```ENTER```).
 
-Press ```Y``` to switch to unix_socket authentication, the ```Y``` again to set a new password for ```root```. \
+Press ```Y``` to switch to unix_socket authentication, then ```Y``` again to set a new password for ```root```. \
 Set the password to ```"root"```.
 
 Press ```Y``` four times until the setup is complete. \
