@@ -11,17 +11,17 @@ CREATE TABLE CAMPING (
 );
 
 CREATE TABLE ACTIVITE (
-	NumActivite INTEGER NOT NULL,
-	NomActivite VARCHAR(50),
-	TypeActivite VARCHAR(50),
-	PRIMARY KEY(NumActivite)
+	NumActivité INTEGER NOT NULL,
+	NomActivité VARCHAR(50),
+	TypeActivité VARCHAR(50),
+	PRIMARY KEY(NumActivité)
 );
 
 CREATE TABLE ACTICAMPING (
 	NumCamping INTEGER NOT NULL,
-	NumActivite INTEGER NOT NULL,
-	PrixActivite FLOAT,
-	PRIMARY KEY(NumCamping,NumActivite),
+	NumActivité INTEGER NOT NULL,
+	PrixActivité FLOAT,
+	PRIMARY KEY(NumCamping,NumActivité),
 	FOREIGN KEY(NumCamping) REFERENCES CAMPING(NumCamping),
-	FOREIGN KEY(NumActivite) REFERENCES ACTIVITE(NumActivite)
+	FOREIGN KEY(NumActivité) REFERENCES ACTIVITE(NumActivité)
 );
