@@ -247,6 +247,12 @@ To check the connection:
 	sudo mysql -uprof -p CAMPING
 
 
+Finally, create a text file in your personal directory containing the name of your group's students.
+
+  touch students.txt
+  nano students.txt
+
+
 <br><br>
 
 [Return to top](#table-of-contents)
