@@ -31,7 +31,7 @@
 
 ## Arch GNU/Linux installation
 
-**This section was moved to another [file](./README-ARCH.md)**
+**This section was moved to another [file](https://github.com/sillyash/S103/blob/e946c84e2755f63c79eac0104a4ad5e2d70f530a/README.md#raspberry-pi-os-installation)**
  
 ## Problems
 
