@@ -8,7 +8,6 @@
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
-- [Introduction](#introduction)
 - [Arch GNU/Linux installation](#arch-gnulinux-installation)
 - [Problems](#problems)
 - [Raspberry Pi OS installation](#raspberry-pi-os-installation)
@@ -26,17 +25,9 @@
 	- [A few basics](#a-few-basics)
 - [Create the database and data](#create-the-database-and-data)
 	- [Create the database](#create-the-database)
-	- [Create tables](#create-tables)
-	- [Insert data into the tables](#insert-data-into-the-tables)
+	- [Create tables and insert data into the tables](#create-tables-and-insert-data-into-the-tables)
 - [Setup users](#setup-users)
 - [Difficulties encountered](#difficulties-encountered)
-
-
-## Introduction
-
-This project was made as a part of the curriculum of the Orsay IUT. \
-Mr. ZEMA organized this project: it is an inroduction to OS installations, database management. \
-It is the first DevOp we've ever had as a group, and we quite enjoyed it!
 
 
 ## Arch GNU/Linux installation
@@ -76,11 +67,7 @@ Plug the SD card in the Raspberry Pi, power the card and boot up.
 	- set country to ```fr```
 	- set character set to ```UTF-8```
 - Timezone and keyboard
-	- set time zone to europe Paris in settings or do:
-
-			timedatectl set-timezone "Europe/Paris"
-		This should change the timezone to ```UTC+1```
-
+	- set time zone to ```Europe/Paris```
 	- change keyboard layout to ```french - France```
 
 
@@ -115,7 +102,7 @@ This command will also install ```MariaDB client``` and ```MySql``` (they're dep
 
 ### Accessing the database
 
-To access the MariaDB commmand line and database, we use (the first time at least):
+To access the MariaDB CLI, we use:
 
 	sudo mysql
 
@@ -150,29 +137,13 @@ The same command, but with more verbose:
 	mysql --user=root --password=root
 
 
-### A few basics
-
-In MariaDB, you cann see the list of commands using ```\h``` for help.\
-You can also use any MySQL command, such as ```SHOW DATABASES;``` or ```SHOW TABLES;```...
-
-You can of course use any SQL command such as:
-
-	SELECT * FROM ...
-	INSERT INTO ...
-	CREATE TABLE ...
-	DROP TABLE ...
-
-
 ## Create the database and data
 
 ### Create the database
 
-To create the database, we use the following MySQL command:
+To create the database and use this database, we use the following MySQL command:
 
 	CREATE DATABASE CAMPING;
-
-To use this database, we simply do:
-
 	USE CAMPING;
 
 And MariaDB should show that you're in the database like so:
@@ -183,68 +154,29 @@ Next time you log in MariaDB, to gain time, you should use:
 
 	mysql -uroot -proot -p CAMPING
 
-To directly login into the the right database.
 
-
-### Create tables
+### Create tables and insert data into the tables
 
 To create the tables, we simply use MySQL, like so:
 
-	CREATE TABLE X (
-		xId INT NOT NULL,
-		X   X,
-		X	X,
-		PRIMARY KEY(xId),
-		FOREIGN KEY(X)
-	);
-
-We made a script in advance so we could just create everything in a single command. \
-[See script](https://github.com/sillyash/S103/blob/1c3209d38636e17decee25541b95f67d224a5574/tables.sql) (we had to download the scripts in the personal repository)
-
-To execute the script, we used:
-
-	source ~/tables.sql
-
-In the MariaDB terminal.
-
-
-### Insert data into the tables
+	CREATE TABLE ... (...);
 
 To fill the tables with data, we simply use MySQL, like so:
 
-	INSERT INTO ... VALUES(X, X, X, X);
-	INSERT INTO ... VALUES(X, X, X, X);
-	...
+	INSERT INTO ... VALUES(...);
 
-We also used a script to gain some time for this. \
-[See script](https://github.com/sillyash/S103/blob/main/data.sql)
+We made scripts in advance so we could just create everything in a single command: \
+[Tables creation](https://github.com/sillyash/S103/blob/1c3209d38636e17decee25541b95f67d224a5574/tables.sql) - 
+[Data insertion](https://github.com/sillyash/S103/blob/main/data.sql) \
+Download the scripts in the personal repository.
 
-To execute the script, we used:
+To execute the scripts, we used:
 
+	source ~/tables.sql
 	source ~/data.sql
-
-In the MariaDB terminal.
 
 
 ## Setup users
-
-To create a new user, after logging in to MariaDB: \
-*(change ```'username'```, ```'localhost'``` and ```'password'``` to the desired username, passwors and host.)*
-
-	CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-
-To allow the user to do anything on the database:
-
-	GRANT ALL PRIVILEGES ON CAMPING.* TO 'username'@'localhost';
-
-In the test script on ```lri.fr```, we can see the following lines:
-
-	db_config = {
-    'user': 'prof',
-    'password': 'pwdprof',
-    'host': '10.42.0.2',
-    'database': 'CAMPING',
-	}
 
 First we need to modify the ```bind_address``` attribute for our server, to allow any IP to connect to it.
 
@@ -253,23 +185,12 @@ First we need to modify the ```bind_address``` attribute for our server, to allo
 
 And find the line beginning by ```bind_address``` and change the address to ```0.0.0.0```.
 
-Which means we need to create a user with the specified name and password. \
-Using the previous commands, we can do:
+To create a new user, after logging in to MariaDB and allow the user to do anything on the database:
 
 	CREATE USER 'prof'@'10.42.0.1' IDENTIFIED BY 'pwdprof';
 	GRANT ALL PRIVILEGES ON CAMPING.* TO 'prof'@'10.42.0.1';
 
 Reboot the Raspberry Pi.
-
-To check the connection:
-
-    sudo mysql -uprof -p CAMPING
-    SELECT user(), current_user();
-
-
-It should return something like:
-
-    prof@localhost | prof@10.42.0.1
 
 Finally, create a text file in your personal directory containing the name of your group's students.
 
@@ -278,10 +199,7 @@ Finally, create a text file in your personal directory containing the name of yo
 
 ## Difficulties encountered
 
-Because of the snow, we missed 90 minutes durng the first class for the project.
-Also, we wasted 3 hours installing Arch only to realize we wouldn't have a GUI and a guarantee that SSH would work.
-
-We're only going to talk about the difficulties encountered after switching to Raspberry Pi OS, because talking about those on ArchARM as well would not be relevant.
+We wasted 3 hours installing Arch only to realize we wouldn't have a GUI and a guarantee that SSH would work.
 
 First of all, ther's been an overall confusion about the ```hostname``` for the ```prof``` user.
 There's been a mix-up between '10.42.0.2', '%', and finally, the one that worked out: '10.42.0.1'.
@@ -296,12 +214,7 @@ Also, we had a hard time finding the problem about the ```bind_address``` proble
 - Naomie FAZER
  	- Most of the commands that we ran
   	- The first and end part of the report
-  	- - Documentation gathering
+  	- Documentation gathering
 - Ash MERIENNE
   	- Some commands
-   	- The rest of the report (including [ARCH-README](./ARCH-README.md)
-
-
-<br><br>
-
-[Return to top](#table-of-contents)
+   	- The rest of the report (including [ARCH-README](./ARCH-README.md))
